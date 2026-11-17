@@ -1,0 +1,564 @@
+/* --- NAVIGATION --- */
+
+
+/* --- example --- */
+
+h1 {
+    font-family: sneakers-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    
+}
+
+/* --- Nav --- */
+
+.logo {
+    width: 120px;
+    height: 40px;
+    background-image:url('lucianaexe/lucianaexe.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+} 
+
+/*.logo:hover {
+    background-image: url('http://sotocode.com/nwsa-logo.gif');
+}
+*/
+
+nav {
+    background-color: #000000;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+nav li a {
+    display: block;
+    padding: 20px 40px;
+    text-decoration: none;
+    color: #ff008c;
+    font-weight: 600;
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    
+}
+
+.active {
+    background-color: #000;
+    color: #ff008c;
+}
+
+nav li a:hover,
+nav .menu-btn:hover {
+    background-color: #4400ff;
+    color: #fff;
+}
+
+nav .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 40px;
+    text-decoration: none;
+}
+
+/* MENU */
+
+nav .menu {
+    clear: both;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease-out;
+}
+
+/* MENU ICON */
+
+nav .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 30px 40px;
+    position: relative;
+    user-select: none;
+}
+
+nav .menu-icon .navicon {
+    background: #ff008c;
+    display: block;
+    height: 4px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 24px;
+}
+
+nav .menu-icon .navicon:before,
+nav .menu-icon .navicon:after {
+    background: #ff008c;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+nav .menu-icon .navicon:before {
+    top: 8px;
+}
+
+nav .menu-icon .navicon:after {
+    top: -8px;
+}
+
+/* MENU btn */
+
+nav .menu-btn {
+    display: none;
+}
+
+nav .menu-btn:checked~.menu {
+    max-height: 250px;
+}
+
+nav .menu-btn:checked~.menu-icon .navicon {
+    background: transparent;
+}
+
+nav .menu-btn:checked~.menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+nav .menu-btn:checked~.menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+nav .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+nav .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+/* MOBILE SCREENS */
+
+@media (max-width: 767px) {
+
+    nav .logo {
+        float: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
+        height: 50px;
+        padding: 10px 0;
+        background-size: contain;
+    }
+
+    nav .menu-icon {
+        float: right;
+        padding: 30px 20px;
+    }
+/* 48em = 768px */
+}
+
+@media (min-width: 48em) {
+    nav li {
+        float: left;
+    }
+
+    nav li a {
+        padding: 22px 40px;
+    }
+
+    nav .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+        overflow: visible;
+    }
+
+    nav .menu-icon {
+        display: none;
+    }
+}
+/*---------------------------------
+
+Video
+
+----------------------------------*/
+body {
+    margin: 0;
+    background-color: #000000;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: #050000;
+}
+
+#video {
+    display: block;
+    width: 100%;
+    height:90%;
+    margin: 0 auto;
+}
+
+#play-pause {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+
+    padding: 0;
+    border: none;
+    border-radius: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#play-pause-center {
+    position: absolute;
+    top: 40%;
+    right: 45%;
+    border: none;
+    border-radius: 40px;
+    background-color: transparent;
+    margin: auto;
+    z-index: 1;    
+}
+  
+#play-pause:hover {
+    cursor: pointer;
+}
+
+.video-message {
+    color: #000000;
+}
+body{
+    background-color: #000;
+}
+
+/*---------------------------------
+
+Portrait
+
+----------------------------------*/
+
+/* ABOUT THE ARTIST SECTION */
+
+.about-artist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 60px;
+    max-width: 900px;
+    min-height: 70vh;
+
+    margin: 0 auto;
+    padding: 80px 30px 120px;
+    box-sizing: border-box;
+}
+
+/* SMALLER ARTIST PICTURE */
+
+.artist-picture {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.artist-picture img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    border: 3px solid #ff008c;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* ARTIST STATEMENT */
+
+.artist-info p{
+    flex: 1;
+    min-width: 0;
+    transform: translateY(-80px);
+    font-family: futura-pt, sans-serif;
+    font-size: 20px;
+    color:#ffb9f0;
+    text-shadow: #ff008c;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .about-artist {
+        flex-direction: column;
+        gap: 30px;
+        padding: 60px 25px 100px;
+    }
+
+    .artist-picture {
+        width: 220px;
+    }
+
+    .artist-info {
+        text-align: center;
+    }
+}
+
+/*---------------------------------
+
+Contact Form
+
+----------------------------------*/
+
+form p {
+    color: #ff008c;
+    font-family: sneakers-pro, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 100;
+
+}
+
+/* --- Y2K CONTACT FORM --- */
+
+/* Text boxes */
+
+/* CENTER CONTACT FORM */
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 120px 20px 100px;
+    box-sizing: border-box;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.container label {
+    display: block;
+    width: 100%;
+}
+
+.container input[type="text"],
+.container input[type="email"],
+.container textarea {
+    display: block;
+    width: 100% !important;
+    margin: 10px 0;
+}
+
+.container form button {
+    align-self: center;
+    margin: 25px 0;
+}
+
+.contact-name,
+.contact-email,
+textarea {
+    background-color: #000000;
+    color: white;
+    border: 3px solid #ff008c;
+    border-radius: 4px;
+    padding: 10px 10px;
+    font-family: futura-pt, sans-serif;
+    font-size: 10px;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+    margin: 10px 10px;
+}
+
+/* Pink glow when clicking on a text box */
+.contact-name:focus,
+.contact-email:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ffb9f0;
+    box-shadow: 0 0 15px #ff008c;
+}
+
+/* Submit button */
+form button {
+    background-color: #000000;
+    color: #ff008c;
+    border: 3px solid #ff008c;
+    border-radius: 4px;
+    padding: 12px 25px;
+    margin: 30px 60px;
+    font-family: futura-pt, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Button hover effect */
+form button:hover {
+    background-color: #ffb9f0;
+    color: #ff008f;
+    box-shadow: 0 0 15px #ff008c;
+}
+
+.contact-name {
+    font-family: futura-pt, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 60%;
+}
+/* Footer */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ff008c;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: futura-pt, sans-serif;
+}
+/* --- Y2K ANIMATIONS PAGE --- */
+.animation-page {
+    padding: 110px 30px 100px;
+    text-align: center;
+    font-family: futura-pt, sans-serif;
+}
+.animation-page h1 {
+    color: #ff008c;
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+/* --- Y2K PHOTOGRAPHY PAGE --- */
+
+.photography-page {
+    padding: 110px 30px 100px;
+    text-align: center;
+    font-family: futura-pt, sans-serif;
+}
+
+.photography-page h1 {
+    color: #ff008c;
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.gallery-subtitle {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* PHOTO GRID */
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* PHOTO BORDERS */
+
+.photo-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 3px solid #ff008c;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+
+.photo-gallery img:hover {
+    border-color: #ffb9f0;
+    box-shadow: 0 0 15px #ff008c;
+    transform: scale(1.03);
+}
+
+/* TABLET AND PHONE */
+
+@media (max-width: 768px) {
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photography-page h1 {
+        font-size: 32px;
+    }
+}
+/* Animation Videos*/
+
+/* LARGE ANIMATION VIDEO GALLERY */
+
+.animation-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 70px;
+    width: 100%;
+    max-width: 100px;
+    margin: 40px auto;
+
+}
+
+.animation-videos {
+    width: 50%;
+    padding-left: 25%;
+}
+
+.animation-videos video {
+    width:100%;
+    border: 3px solid #ff008c;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.animation-videos h2 {
+    color: #ffb9f0;
+    font-family: futura-pt, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+    .animation-gallery {
+        width: 95%;
+        gap: 40px;
+    }
+
+    .animation-videos h2 {
+        font-size: 20px;
+    }
+}
+.thank-you {
+    background-color: #000000;
+    color: #ff008c;
+}
